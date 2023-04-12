@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Home page</title>
+  </head>
+  <body>
+   <!-- navbar -->
+   
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Employee System</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Add Emp</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+
+<!-- form -->
+<div class="container col-md-6 offset-md-3 card row" >
+<h2 class="text-primary text-center">Add Employee</h2>
+<div class="text-center">
+<form th:action="@{/update}" method="post" th:object="${emp}">
+<label class="form-group">Enter Id</label>
+<input  th:value="${emp.id}" name="id"/>
+  <label class="form-group">Enter Full Name</label>
+  <br><input class="form-control" type="text" name="name" th:value="${emp.name}"/>
+  <br>
+ <label class="form-group"> Enter Address</label>
+  <br><input class="form-control" type="text" name="address" th:value="${emp.address}"/>
+  <br> <label class="form-group">  Enter Email</label>
+  <br><input class="form-control" type="text" name="email" th:value="${emp.email}"/>
+  <br><label class="form-group">  Enter Phone No</label>
+  <br><input class="form-control" type="text" name="phone" th:value="${emp.phone}"/>
+  <br>
+   <label class="form-group">   Enter Salary</label>
+  <br><input class="form-control"type="text" name="salary" th:value="${emp.salary}"/>
+  <br>
+  <button  type="submit" class="btn btn-primary">Update</button>
+</form>
+</div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
